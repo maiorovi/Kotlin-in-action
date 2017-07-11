@@ -1,5 +1,9 @@
 package kotlin_in_action.ch3
 
+import extensions.lastChar
+import org.apache.commons.lang3.StringUtils.isEmpty
+import extensions.lastChar as last
+
 fun main(args: Array<String>) {
     val set = hashSetOf(1, 2, 3, 4)
     val list = arrayListOf(1, 7, 53)
@@ -12,9 +16,19 @@ fun main(args: Array<String>) {
     println(list.last())
     println(set.max())
 
-
     val numbers = arrayListOf(1, 2, 3, 4, 5)
     println(numbers) //toString invoked
+    // extension type string and extension object is "Kotlin"
+    "Kotlin".lastChar()
+    // with import alias it also works
+    "Kotlin".last()
+
+    //cool; this works extension functions + static apache commons libs
+    println("Kotlin".isEmpty())
+
+    val sb = StringBuilder("Kotlin?")
+    sb.lastChar = '!'
+    println(sb.toString())
 }
 
 // this language feature of default parameter values allows
