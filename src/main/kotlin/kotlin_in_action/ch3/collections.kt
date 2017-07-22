@@ -29,6 +29,8 @@ fun main(args: Array<String>) {
     val sb = StringBuilder("Kotlin?")
     sb.lastChar = '!'
     println(sb.toString())
+
+    val list1 = listOf(1,2,3,4)
 }
 
 // this language feature of default parameter values allows
@@ -52,4 +54,8 @@ fun <T> joinToString (
     result.append(postfix)
 
     return result.toString()
+}
+
+fun sumWithDescription(vararg elems:Int):Int {
+    return elems.sum()
 }
